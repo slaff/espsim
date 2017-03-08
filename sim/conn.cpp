@@ -612,7 +612,7 @@ extern "C" {
 		return 0;
 	}
 
-	bool espconn_secure_ca_enable(uint8 level, uint8 flash_sector) {
+	bool espconn_secure_ca_enable(uint8 level, uint32 flash_sector) {
 		debug1(__LINE__);
 		return 0;
 	}
