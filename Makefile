@@ -1,8 +1,8 @@
 # I don't bother creating archives for small projects, you want to make it a lib, go ahead.
 # Should create a good regression test example.
 
-OPEN_SDK	?= $(HOME)/dev/esp-open-sdk
-SDK			?= $(OPEN_SDK)/esp_iot_sdk_v1.3.0
+ESP_HOME	?= /opt/Espressif/
+SDK_BASE	?= $(ESP_HOME)/esp_iot_sdk_v1.3.0
 PORT		?= /dev/ttyUSB0
 BAUD		?= 115200
 
@@ -16,7 +16,7 @@ OBJS		:= $(patsubst %.cpp,%.o,$(SRCS))
 INCDIRS		:= $(addprefix -I,$(INCDIRS))
 LIBS		:= $(addprefix -l,$(LIBS))
 
-CFLAGS		=  $(INCDIRS) -I$(SDK)/include -DLINUX -std=c++11 -m32 -g -O2
+CFLAGS		=  $(INCDIRS) -I$(SDK_BASE)/include -DLINUX -std=c++11 -m32 -g -O2
 CFLAGS		+= -Wall
 CFLAGS		+= -Wpedantic
 CFLAGS		+= -Wno-parentheses
