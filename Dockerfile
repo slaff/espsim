@@ -30,5 +30,8 @@ ENV FW_TOOL /opt/esp-open-sdk/xtensa-lx106-elf/bin/esptool.py
 
 ENV ESP_HOME /opt/esp-open-sdk
 
+COPY assets/c_types.h /opt/esp-open-sdk/sdk/include/c_types.h
+COPY assets/eagle_soc.h /opt/esp-open-sdk/sdk/include/eagle_soc.h
+
 RUN cd /root && git clone https://github.com/slaff/espsim.git
 RUN cd /root/espsim && make SDK=$SDK_BASE
